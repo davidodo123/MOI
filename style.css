@@ -21,13 +21,13 @@ body.index-page {
     align-items: center;
     padding: 2rem 8%;
     z-index: 1000;
-
     background: transparent;
     box-shadow: none;
 
     .logo {
       display: flex;
       align-items: center;
+      z-index: 2000;
 
       img {
         width: auto;
@@ -41,12 +41,16 @@ body.index-page {
       gap: 3rem;
       list-style: none;
 
+      @media (max-width: 768px) {
+        display: none;
+      }
+
       a {
         font-family: "Lato", sans-serif;
         position: relative;
         text-decoration: none;
-        color: #2c2c2c;
-        font-size: 1.5rem;
+        color: black;
+        font-size: clamp(1.5rem, 1.5rem + 0vw, 1.5rem);
         letter-spacing: 1px;
         font-weight: 500;
 
@@ -57,12 +61,12 @@ body.index-page {
           bottom: -4px;
           width: 0;
           height: 2px;
-          background: #000;
+          background: white;
           transition: width 0.25s ease;
         }
 
         &:hover {
-          color: #2c2c2c;
+          color: white;
         }
 
         &:hover::after {
@@ -78,7 +82,176 @@ body.index-page {
         }
       }
     }
+
+    .navcollapse {
+      overflow: hidden;
+      z-index: 2000;
+
+      #nav-icon {
+        width: 30px;
+        height: 35px;
+        position: relative;
+        cursor: pointer;
+        margin: 0 auto;
+        transform: scale(0.8);
+
+        span {
+          display: block;
+          position: absolute;
+          width: 50%;
+          height: 4px;
+          background: #2c2c2c;
+          transition: .2s ease-in-out;
+
+          &:nth-child(odd) {
+            left: 0;
+            border-radius: 8px 0 0 8px;
+          }
+
+          &:nth-child(even) {
+            left: 50%;
+            border-radius: 0 8px 8px 0;
+          }
+
+          &:nth-child(1),
+          &:nth-child(2) {
+            top: 0;
+          }
+
+          &:nth-child(3),
+          &:nth-child(4) {
+            top: 9px;
+          }
+
+          &:nth-child(5),
+          &:nth-child(6) {
+            top: 18px;
+          }
+        }
+
+        &.open {
+          span {
+            background: black;
+          }
+
+          span:nth-child(1),
+          span:nth-child(6) {
+            transform: rotate(45deg);
+          }
+
+          span:nth-child(2),
+          span:nth-child(5) {
+            transform: rotate(-45deg);
+          }
+
+          span:nth-child(1) {
+            left: 3px;
+            top: 5px;
+          }
+
+          span:nth-child(2) {
+            top: 5px;
+            right: 7px;
+          }
+
+          span:nth-child(3) {
+            transform: translateX(-100px);
+            opacity: 0;
+          }
+
+          span:nth-child(4) {
+            transform: translateX(100px);
+            opacity: 0;
+          }
+
+          span:nth-child(5) {
+            left: 3px;
+            top: 16px;
+          }
+
+          span:nth-child(6) {
+            top: 16px;
+          }
+        }
+      }
+    }
   }
+
+  .menu_mobile {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    background: white;
+    z-index: 1500;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.4s ease-in-out;
+
+    &.menu-open {
+      opacity: 1;
+      visibility: visible;
+    }
+
+    .logo-m {
+      position: absolute;
+      top: 2rem;
+      left: 50%;
+      transform: translateX(-50%);
+      text-align: center;
+
+      img {
+        height: 60px;
+        width: auto;
+        margin-bottom: 10px;
+      }
+
+      .brand-m {
+        color: black;
+        font-family: "Lato", sans-serif;
+        font-size: 1rem;
+        letter-spacing: 2px;
+        text-transform: uppercase;
+      }
+    }
+
+    .menu_mobile_nav {
+      list-style: none;
+      padding: 0;
+      text-align: center;
+
+      .item {
+        margin: 25px 0;
+        overflow: hidden;
+
+        a {
+          text-decoration: none;
+          color: black;
+          font-family: "Lato", sans-serif;
+          font-size: 2.5rem;
+          font-weight: 300;
+          display: block;
+          transition: color 0.3s ease;
+
+          span {
+            display: block;
+          }
+
+          &:hover {
+            color: #ccc;
+          }
+        }
+      }
+    }
+  }
+
 
   .hero {
     position: relative;
@@ -90,14 +263,15 @@ body.index-page {
     justify-content: space-between;
     padding: 0 8%;
 
+
     .hero-content {
       max-width: 500px;
-      margin-top: 80px;
       animation: fadeInLeft 1s ease-out;
       font-family: "Lato";
 
       h1 {
-        font-size: 3.5rem;
+        font-size: clamp(3.5rem, 3.5rem + 0vw, 3.5rem);
+        ;
         line-height: 1.2;
         color: #2c2c2c;
         margin-bottom: 0.5rem;
@@ -105,7 +279,7 @@ body.index-page {
       }
 
       p {
-        font-size: 1.1rem;
+        font-size: clamp(1.1rem, 1.1rem + 0vw, 1.1rem);
         color: #5a5a5a;
         margin-bottom: 2rem;
       }
@@ -118,7 +292,8 @@ body.index-page {
         text-decoration: none;
         text-transform: uppercase;
         letter-spacing: 2px;
-        font-size: 0.85rem;
+        font-size: clamp(0.85rem, 0.85rem + 0vw, 0.85rem);
+        ;
         transition: all 0.3s ease;
         border: 2px solid #2c2c2c;
 
@@ -178,7 +353,7 @@ body.index-page {
   .history-text-content {
     flex: 1;
     text-align: left;
-    font-size: 1.1rem;
+    font-size: clamp(1.1rem, 1.1rem + 0vw, 1.1rem);
     line-height: 1.6;
     color: #333;
   }
@@ -190,19 +365,7 @@ body.index-page {
     flex-shrink: 0;
   }
 
-  @media (max-width: 768px) {
-    .history-text-card {
-      flex-direction: column;
-      width: 90%;
-      margin-top: -40px;
-      padding: 30px;
-    }
 
-    .history-divider {
-      width: 50px;
-      height: 1px;
-    }
-  }
 
   .philosophy {
     width: 100%;
@@ -249,7 +412,8 @@ body.index-page {
         .subtitle {
           display: block;
           font-family: "Lato", sans-serif;
-          font-size: 0.8rem;
+          font-size: clamp(0.8rem, 0.8rem + 0vw, 0.8rem);
+          ;
           letter-spacing: 0.25em;
           text-transform: uppercase;
           color: #d4a373;
@@ -259,7 +423,8 @@ body.index-page {
 
         h2 {
           font-family: "Playfair Display", serif;
-          font-size: 3.5rem;
+          font-size: clamp(3.5rem, 3.5rem + 0vw, 3.5rem);
+          ;
           font-weight: 400;
           color: #111;
           line-height: 1.1;
@@ -270,7 +435,7 @@ body.index-page {
       .philosophy-body {
         p {
           font-family: "Lato", sans-serif;
-          font-size: 1.05rem;
+          font-size: clamp(1rem, 1rem + 0vw, 1rem);
           line-height: 1.8;
           color: #555;
           margin-bottom: 0;
@@ -364,7 +529,8 @@ body.index-page {
         }
 
         p {
-          font-size: 0.85rem;
+          font-size: clamp(0.85rem, 0.85rem + 0vw, 0.85rem);
+          ;
           line-height: 1.4;
           color: #2c2c2c;
         }
@@ -396,7 +562,8 @@ body.index-page {
 
       h2 {
         font-family: "Bodoni Moda", serif;
-        font-size: 2.4rem;
+        font-size: clamp(2.4rem, 2.4rem + 0vw, 2.4rem);
+        ;
         letter-spacing: 0.22em;
         text-transform: uppercase;
         font-weight: 500;
@@ -405,7 +572,8 @@ body.index-page {
       .reviews-subtitle {
         margin-top: 1rem;
         font-family: "Lato", sans-serif;
-        font-size: 0.9rem;
+        font-size: clamp(0.9rem, 0.9rem + 0vw, 0.9rem);
+        ;
         letter-spacing: 0.08em;
         text-transform: uppercase;
         color: #7b746d;
@@ -434,7 +602,8 @@ body.index-page {
           top: 0.9rem;
           left: 1.1rem;
           font-family: "Lato";
-          font-size: 2.5rem;
+          font-size: clamp(2.5rem, 2.5rem + 0vw, 2.5rem);
+          ;
           line-height: 1;
           color: #d0c2b6;
           pointer-events: none;
@@ -442,7 +611,8 @@ body.index-page {
 
         .review-text {
           font-family: "Lato";
-          font-size: 0.95rem;
+          font-size: clamp(1rem, 1rem + 0vw, 1rem);
+          ;
           line-height: 1.9;
           color: #2c2c2c;
           margin: 0 0 1.4rem;
@@ -450,7 +620,8 @@ body.index-page {
 
         .review-rating {
           margin-bottom: 0.8rem;
-          font-size: 0.9rem;
+          font-size: clamp(0.9rem, 0.9rem + 0vw, 0.9rem);
+          ;
           letter-spacing: 0.18em;
           color: #111111;
         }
@@ -459,7 +630,8 @@ body.index-page {
           .review-name {
             display: block;
             font-family: "Lato";
-            font-size: 0.85rem;
+            font-size: clamp(0.85rem, 0.85rem + 0vw, 0.85rem);
+            ;
             letter-spacing: 0.2em;
             text-transform: uppercase;
           }
@@ -468,7 +640,8 @@ body.index-page {
             display: block;
             margin-top: 0.15rem;
             font-family: "Lato";
-            font-size: 0.8rem;
+            font-size: clamp(0.8rem, 0.8rem + 0vw, 0.8rem);
+            ;
             color: #817a73;
           }
         }
@@ -501,7 +674,8 @@ body.index-page {
 
       h2 {
         font-family: "Lato";
-        font-size: 2.2rem;
+        font-size: clamp(2.2rem, 2.2rem + 0vw, 2.2rem);
+        ;
         letter-spacing: 0.22em;
         text-transform: uppercase;
         font-weight: 500;
@@ -511,7 +685,8 @@ body.index-page {
       .private-events-kicker {
         margin-top: 1rem;
         font-family: "Lato";
-        font-size: 0.85rem;
+        font-size: clamp(0.85rem, 0.85rem + 0vw, 0.85rem);
+        ;
         letter-spacing: 0.16em;
         text-transform: uppercase;
         color: #7b746d;
@@ -531,7 +706,7 @@ body.index-page {
       flex: 1 1 320px;
       max-width: 520px;
       font-family: "Playfair Display", serif;
-      font-size: 1rem;
+      font-size: clamp(1rem, 1rem + 0vw, 1rem);
       line-height: 1.9;
       border-left: 3px solid #000;
       padding-left: 2.5rem;
@@ -548,7 +723,8 @@ body.index-page {
 
       .private-events-label {
         font-family: "Lato";
-        font-size: 0.95rem;
+        font-size: clamp(1rem, 1rem + 0vw, 1rem);
+        ;
         letter-spacing: 0.18em;
         text-transform: uppercase;
         margin-bottom: 1.4rem;
@@ -590,7 +766,8 @@ body.index-page {
 
       .footer-label {
         display: block;
-        font-size: 0.8rem;
+        font-size: clamp(0.8rem, 0.8rem + 0vw, 0.8rem);
+        ;
         text-transform: uppercase;
         letter-spacing: 0.25em;
         color: #888;
@@ -650,7 +827,8 @@ body.index-page {
       }
 
       h3 {
-        font-size: 0.75rem;
+        font-size: clamp(0.75rem, 0.75rem + 0vw, 0.75rem);
+        ;
         text-transform: uppercase;
         letter-spacing: 0.2em;
         color: #666;
@@ -660,7 +838,7 @@ body.index-page {
       p,
       a,
       li {
-        font-size: 1rem;
+        font-size: clamp(1rem, 1rem + 0vw, 1rem);
         color: #ccc;
         text-decoration: none;
         line-height: 1.6;
@@ -714,7 +892,8 @@ body.index-page {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    font-size: 0.75rem;
+    font-size: clamp(0.75rem, 0.75rem + 0vw, 0.75rem);
+    ;
     color: #555;
     text-transform: uppercase;
     letter-spacing: 0.1em;
@@ -752,13 +931,13 @@ body.team-page {
     align-items: center;
     padding: 2rem 8%;
     z-index: 1000;
-
     background: transparent;
     box-shadow: none;
 
     .logo {
       display: flex;
       align-items: center;
+      z-index: 2000;
 
       img {
         width: auto;
@@ -772,12 +951,16 @@ body.team-page {
       gap: 3rem;
       list-style: none;
 
+      @media (max-width: 768px) {
+        display: none;
+      }
+
       a {
         font-family: "Lato", sans-serif;
         position: relative;
         text-decoration: none;
-        color: #2c2c2c;
-        font-size: 1.5rem;
+        color: black;
+        font-size: clamp(1.5rem, 1.5rem + 0vw, 1.5rem);
         letter-spacing: 1px;
         font-weight: 500;
 
@@ -788,12 +971,12 @@ body.team-page {
           bottom: -4px;
           width: 0;
           height: 2px;
-          background: #000;
+          background: white;
           transition: width 0.25s ease;
         }
 
         &:hover {
-          color: #2c2c2c;
+          color: white;
         }
 
         &:hover::after {
@@ -809,6 +992,174 @@ body.team-page {
         }
       }
     }
+
+    .navcollapse {
+      overflow: hidden;
+      z-index: 2000;
+
+      #nav-icon {
+        width: 30px;
+        height: 35px;
+        position: relative;
+        cursor: pointer;
+        margin: 0 auto;
+        transform: scale(0.8);
+
+        span {
+          display: block;
+          position: absolute;
+          width: 50%;
+          height: 4px;
+          background: #2c2c2c;
+          transition: .2s ease-in-out;
+
+          &:nth-child(odd) {
+            left: 0;
+            border-radius: 8px 0 0 8px;
+          }
+
+          &:nth-child(even) {
+            left: 50%;
+            border-radius: 0 8px 8px 0;
+          }
+
+          &:nth-child(1),
+          &:nth-child(2) {
+            top: 0;
+          }
+
+          &:nth-child(3),
+          &:nth-child(4) {
+            top: 9px;
+          }
+
+          &:nth-child(5),
+          &:nth-child(6) {
+            top: 18px;
+          }
+        }
+
+        &.open {
+          span {
+            background: black;
+          }
+
+          span:nth-child(1),
+          span:nth-child(6) {
+            transform: rotate(45deg);
+          }
+
+          span:nth-child(2),
+          span:nth-child(5) {
+            transform: rotate(-45deg);
+          }
+
+          span:nth-child(1) {
+            left: 3px;
+            top: 5px;
+          }
+
+          span:nth-child(2) {
+            top: 5px;
+            right: 7px;
+          }
+
+          span:nth-child(3) {
+            transform: translateX(-100px);
+            opacity: 0;
+          }
+
+          span:nth-child(4) {
+            transform: translateX(100px);
+            opacity: 0;
+          }
+
+          span:nth-child(5) {
+            left: 3px;
+            top: 16px;
+          }
+
+          span:nth-child(6) {
+            top: 16px;
+          }
+        }
+      }
+    }
+  }
+
+  .menu_mobile {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    background: white;
+    z-index: 1500;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.4s ease-in-out;
+
+    &.menu-open {
+      opacity: 1;
+      visibility: visible;
+    }
+
+    .logo-m {
+      position: absolute;
+      top: 2rem;
+      left: 50%;
+      transform: translateX(-50%);
+      text-align: center;
+
+      img {
+        height: 60px;
+        width: auto;
+        margin-bottom: 10px;
+      }
+
+      .brand-m {
+        color: black;
+        font-family: "Lato", sans-serif;
+        font-size: 1rem;
+        letter-spacing: 2px;
+        text-transform: uppercase;
+      }
+    }
+
+    .menu_mobile_nav {
+      list-style: none;
+      padding: 0;
+      text-align: center;
+
+      .item {
+        margin: 25px 0;
+        overflow: hidden;
+
+        a {
+          text-decoration: none;
+          color: black;
+          font-family: "Lato", sans-serif;
+          font-size: 2.5rem;
+          font-weight: 300;
+          display: block;
+          transition: color 0.3s ease;
+
+          span {
+            display: block;
+          }
+
+          &:hover {
+            color: #ccc;
+          }
+        }
+      }
+    }
   }
 
   .team-hero {
@@ -817,7 +1168,8 @@ body.team-page {
     padding-bottom: 3rem;
 
     h1 {
-      font-size: 4rem;
+      font-size: clamp(4rem, 4rem + 0vw, 4rem);
+      ;
       letter-spacing: 0.25em;
       text-transform: uppercase;
       font-weight: 400;
@@ -840,7 +1192,7 @@ body.team-page {
     h2 {
       text-align: center;
       font-family: "Playfair Display", serif;
-      font-size: 3.5rem;
+font-size: clamp(2.5rem, 2.203rem + 1.081vw, 3.5rem);      ;
       letter-spacing: 0.05em;
       text-transform: uppercase;
       font-weight: 400;
@@ -867,7 +1219,7 @@ body.team-page {
       .chefs-intro-text {
         flex: 1;
         font-family: "Lato", sans-serif;
-        font-size: 1.05rem;
+        font-size: clamp(1.1rem, 1rem + 0vw, 1rem);
         line-height: 1.9;
         color: #2c2c2c;
 
@@ -885,7 +1237,7 @@ body.team-page {
           margin-top: 2.5rem;
           display: block;
           font-family: "Playfair Display", serif;
-          font-size: 1.8rem;
+          font-size: clamp(1rem, 1rem + 0vw, 1rem);
           font-style: italic;
           line-height: 1.4;
           color: #111111;
@@ -963,7 +1315,8 @@ body.team-page {
 
         h3 {
           font-family: "Playfair Display", serif;
-          font-size: 2.2rem;
+          font-size: clamp(2.2rem, 2.2rem + 0vw, 2.2rem);
+          ;
           color: #111111;
           text-transform: uppercase;
           margin: 0 0 0.5rem;
@@ -972,7 +1325,8 @@ body.team-page {
 
         h4 {
           font-family: "Lato", sans-serif;
-          font-size: 0.9rem;
+          font-size: clamp(0.9rem, 0.9rem + 0vw, 0.9rem);
+          ;
           text-transform: uppercase;
           letter-spacing: 0.2em;
           color: #d4a373;
@@ -982,7 +1336,7 @@ body.team-page {
 
         p {
           font-family: "Lato", sans-serif;
-          font-size: 1rem;
+          font-size: clamp(1rem, 1rem + 0vw, 1rem);
           line-height: 1.8;
           color: #666666;
           margin-bottom: 1.5rem;
@@ -1011,8 +1365,8 @@ body.team-page {
           }
 
           img {
-            width: 14px;
-            height: 14px;
+            width: 40px;
+            height: 40px;
             flex: none;
             margin: 0;
             object-fit: contain;
@@ -1033,56 +1387,57 @@ body.team-page {
       display: grid;
       grid-template-columns: repeat(3, 1fr);
       gap: 3rem;
-    }
 
-    .front-card {
-      text-align: center;
-      transition: transform 0.3s ease;
 
-      &:hover {
-        transform: translateY(-10px);
-      }
-
-      img {
-        width: 100%;
-        height: 400px;
-        object-fit: cover;
-        display: block;
-        margin-bottom: 1.5rem;
-      }
-
-      h3 {
-        font-family: "Playfair Display", serif;
-        font-size: 1.5rem;
-        color: #111111;
-        margin-bottom: 0.5rem;
-      }
-
-      .front-card-role {
-        font-family: "Lato", sans-serif;
-        font-size: 0.85rem;
-        text-transform: uppercase;
-        letter-spacing: 0.15em;
-        color: #888888;
-        margin-bottom: 1rem;
-      }
-
-      .front-card-social {
-        display: flex;
-        justify-content: center;
-        gap: 15px;
-        opacity: 0.6;
-        transition: opacity 0.3s;
+      .front-card {
+        text-align: center;
+        transition: transform 0.3s ease;
 
         &:hover {
-          opacity: 1;
+          transform: translateY(-10px);
         }
 
         img {
-          width: 18px;
-          height: 18px;
-          margin: 0;
-          object-fit: contain;
+          width: 100%;
+          height: 400px;
+          object-fit: cover;
+          display: block;
+          margin-bottom: 1.5rem;
+        }
+
+        h3 {
+          font-family: "Playfair Display", serif;
+          font-size: clamp(1.5rem, 1.5rem + 0vw, 1.5rem);
+          color: #111111;
+          margin-bottom: 0.5rem;
+        }
+
+        .front-card-role {
+          font-family: "Lato", sans-serif;
+          font-size: clamp(0.8rem, 0.8rem + 0vw, 0.8rem);
+          text-transform: uppercase;
+          letter-spacing: 0.15em;
+          color: #888888;
+          margin-bottom: 1rem;
+        }
+
+        .front-card-social {
+          display: flex;
+          justify-content: center;
+          gap: 15px;
+          opacity: 0.6;
+          transition: opacity 0.3s;
+
+          &:hover {
+            opacity: 1;
+          }
+
+          img {
+            width: 30px;
+            height: 30px;
+            margin: 0;
+            object-fit: contain;
+          }
         }
       }
     }
@@ -1102,7 +1457,7 @@ body.team-page {
     }
 
     .team-collab-text {
-      max-width: 1000px;
+      max-width: 1500px;
       margin: 3rem auto 0;
       padding: 0 8%;
       display: flex;
@@ -1113,7 +1468,7 @@ body.team-page {
     .team-collab-text-col {
       flex: 1;
       font-family: "Lato", sans-serif;
-      font-size: 1rem;
+      font-size: clamp(1rem, 1rem + 0vw, 1rem);
       line-height: 1.8;
       color: #555555;
       text-align: justify;
@@ -1149,7 +1504,7 @@ body.team-page {
     .team-story-text {
       flex: 1;
       font-family: "Lato", sans-serif;
-      font-size: 1.1rem;
+      font-size: clamp(1.1rem, 1.1rem + 0vw, 1.1rem);
       line-height: 1.8;
       color: #2c2c2c;
       font-weight: 300;
@@ -1195,6 +1550,7 @@ body.menu-page {
     .logo {
       display: flex;
       align-items: center;
+      z-index: 2000;
 
       img {
         width: auto;
@@ -1208,11 +1564,16 @@ body.menu-page {
       gap: 3rem;
       list-style: none;
 
+      @media (max-width: 768px) {
+        display: none;
+      }
+
       a {
+        font-family: "Lato", sans-serif;
         position: relative;
         text-decoration: none;
-        color: #2c2c2c;
-        font-size: clamp(1.1rem, 1.5vw, 1.5rem);
+        color: black;
+        font-size: clamp(1.5rem, 1.5rem + 0vw, 1.5rem);
         letter-spacing: 1px;
         font-weight: 500;
 
@@ -1223,12 +1584,12 @@ body.menu-page {
           bottom: -4px;
           width: 0;
           height: 2px;
-          background: #000;
+          background: white;
           transition: width 0.25s ease;
         }
 
         &:hover {
-          color: #2c2c2c;
+          color: white;
         }
 
         &:hover::after {
@@ -1240,6 +1601,174 @@ body.menu-page {
 
           &::after {
             width: 100%;
+          }
+        }
+      }
+    }
+
+    .navcollapse {
+      overflow: hidden;
+      z-index: 2000;
+
+      #nav-icon {
+        width: 30px;
+        height: 35px;
+        position: relative;
+        cursor: pointer;
+        margin: 0 auto;
+        transform: scale(0.8);
+
+        span {
+          display: block;
+          position: absolute;
+          width: 50%;
+          height: 4px;
+          background: #2c2c2c;
+          transition: .2s ease-in-out;
+
+          &:nth-child(odd) {
+            left: 0;
+            border-radius: 8px 0 0 8px;
+          }
+
+          &:nth-child(even) {
+            left: 50%;
+            border-radius: 0 8px 8px 0;
+          }
+
+          &:nth-child(1),
+          &:nth-child(2) {
+            top: 0;
+          }
+
+          &:nth-child(3),
+          &:nth-child(4) {
+            top: 9px;
+          }
+
+          &:nth-child(5),
+          &:nth-child(6) {
+            top: 18px;
+          }
+        }
+
+        &.open {
+          span {
+            background: black;
+          }
+
+          span:nth-child(1),
+          span:nth-child(6) {
+            transform: rotate(45deg);
+          }
+
+          span:nth-child(2),
+          span:nth-child(5) {
+            transform: rotate(-45deg);
+          }
+
+          span:nth-child(1) {
+            left: 3px;
+            top: 5px;
+          }
+
+          span:nth-child(2) {
+            top: 5px;
+            right: 7px;
+          }
+
+          span:nth-child(3) {
+            transform: translateX(-100px);
+            opacity: 0;
+          }
+
+          span:nth-child(4) {
+            transform: translateX(100px);
+            opacity: 0;
+          }
+
+          span:nth-child(5) {
+            left: 3px;
+            top: 16px;
+          }
+
+          span:nth-child(6) {
+            top: 16px;
+          }
+        }
+      }
+    }
+  }
+
+  .menu_mobile {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    background: white;
+    z-index: 1500;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.4s ease-in-out;
+
+    &.menu-open {
+      opacity: 1;
+      visibility: visible;
+    }
+
+    .logo-m {
+      position: absolute;
+      top: 2rem;
+      left: 50%;
+      transform: translateX(-50%);
+      text-align: center;
+
+      img {
+        height: 60px;
+        width: auto;
+        margin-bottom: 10px;
+      }
+
+      .brand-m {
+        color: black;
+        font-family: "Lato", sans-serif;
+        font-size: 1rem;
+        letter-spacing: 2px;
+        text-transform: uppercase;
+      }
+    }
+
+    .menu_mobile_nav {
+      list-style: none;
+      padding: 0;
+      text-align: center;
+
+      .item {
+        margin: 25px 0;
+        overflow: hidden;
+
+        a {
+          text-decoration: none;
+          color: black;
+          font-family: "Lato", sans-serif;
+          font-size: 2.5rem;
+          font-weight: 300;
+          display: block;
+          transition: color 0.3s ease;
+
+          span {
+            display: block;
+          }
+
+          &:hover {
+            color: #ccc;
           }
         }
       }
@@ -1323,7 +1852,8 @@ body.menu-page {
         content: "TASTING MENU";
         display: block;
         font-family: "Lato", sans-serif;
-        font-size: 0.7rem;
+        font-size: clamp(0.7rem, 0.7rem + 0vw, 0.7rem);
+        ;
         letter-spacing: 0.25em;
         color: #d4a373;
         margin-bottom: 1rem;
@@ -1376,7 +1906,7 @@ body.menu-page {
       .tasting-menu-price {
         margin-top: 3.5rem;
         font-family: "Lato", sans-serif;
-        font-size: clamp(1.1rem, 1.5vw, 1.3rem);
+        font-size: clamp(0.7rem, 1.5vw, 1.3rem);
         font-weight: 700;
         color: #000;
         display: block;
@@ -1406,7 +1936,7 @@ body.menu-page {
       margin: 0 1rem;
     }
 
-    &>img {
+    img {
       display: none;
     }
 
@@ -1547,7 +2077,8 @@ body.menu-page {
           align-items: baseline;
 
           span {
-            font-size: 1.2rem;
+            font-size: clamp(1.2rem, 1.2rem + 0vw, 1.2rem);
+            ;
             color: #888;
             font-family: "Lato";
           }
@@ -1647,7 +2178,7 @@ body.menu-page {
         span {
           font-family: "Lato", sans-serif;
           font-weight: 500;
-          font-size: 1rem;
+          font-size: clamp(1rem, 1rem + 0vw, 1rem);
           letter-spacing: 0.2em;
           text-transform: uppercase;
           color: #fff;
@@ -1690,6 +2221,7 @@ body.contact-page {
     .logo {
       display: flex;
       align-items: center;
+      z-index: 2000;
 
       img {
         width: auto;
@@ -1703,12 +2235,16 @@ body.contact-page {
       gap: 3rem;
       list-style: none;
 
+      @media (max-width: 768px) {
+        display: none;
+      }
+
       a {
+        font-family: "Lato", sans-serif;
         position: relative;
         text-decoration: none;
-        color: #ffffff;
-        /* BLANCO PORQUE HAY FOTO DEBAJO */
-        font-size: clamp(1.1rem, 1.5vw, 1.5rem);
+        color: white;
+        font-size: clamp(1.5rem, 1.5rem + 0vw, 1.5rem);
         letter-spacing: 1px;
         font-weight: 500;
 
@@ -1719,13 +2255,12 @@ body.contact-page {
           bottom: -4px;
           width: 0;
           height: 2px;
-          background: #ffffff;
-          /* LÍNEA BLANCA */
+          background: white;
           transition: width 0.25s ease;
         }
 
         &:hover {
-          color: #ffffff;
+          color: white;
         }
 
         &:hover::after {
@@ -1741,7 +2276,176 @@ body.contact-page {
         }
       }
     }
+
+    .navcollapse {
+      overflow: hidden;
+      z-index: 2000;
+
+      #nav-icon {
+        width: 30px;
+        height: 35px;
+        position: relative;
+        cursor: pointer;
+        margin: 0 auto;
+        transform: scale(0.8);
+
+        span {
+          display: block;
+          position: absolute;
+          width: 50%;
+          height: 4px;
+          background: white;
+          transition: .2s ease-in-out;
+
+          &:nth-child(odd) {
+            left: 0;
+            border-radius: 8px 0 0 8px;
+          }
+
+          &:nth-child(even) {
+            left: 50%;
+            border-radius: 0 8px 8px 0;
+          }
+
+          &:nth-child(1),
+          &:nth-child(2) {
+            top: 0;
+          }
+
+          &:nth-child(3),
+          &:nth-child(4) {
+            top: 9px;
+          }
+
+          &:nth-child(5),
+          &:nth-child(6) {
+            top: 18px;
+          }
+        }
+
+        &.open {
+          span {
+            background: white;
+          }
+
+          span:nth-child(1),
+          span:nth-child(6) {
+            transform: rotate(45deg);
+          }
+
+          span:nth-child(2),
+          span:nth-child(5) {
+            transform: rotate(-45deg);
+          }
+
+          span:nth-child(1) {
+            left: 3px;
+            top: 5px;
+          }
+
+          span:nth-child(2) {
+            top: 5px;
+            right: 7px;
+          }
+
+          span:nth-child(3) {
+            transform: translateX(-100px);
+            opacity: 0;
+          }
+
+          span:nth-child(4) {
+            transform: translateX(100px);
+            opacity: 0;
+          }
+
+          span:nth-child(5) {
+            left: 3px;
+            top: 16px;
+          }
+
+          span:nth-child(6) {
+            top: 16px;
+          }
+        }
+      }
+    }
   }
+
+  .menu_mobile {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    background: white;
+    z-index: 1500;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.4s ease-in-out;
+
+    &.menu-open {
+      opacity: 1;
+      visibility: visible;
+    }
+
+    .logo-m {
+      position: absolute;
+      top: 2rem;
+      left: 50%;
+      transform: translateX(-50%);
+      text-align: center;
+
+      img {
+        height: 60px;
+        width: auto;
+        margin-bottom: 10px;
+      }
+
+      .brand-m {
+        color: black;
+        font-family: "Lato", sans-serif;
+        font-size: 1rem;
+        letter-spacing: 2px;
+        text-transform: uppercase;
+      }
+    }
+
+    .menu_mobile_nav {
+      list-style: none;
+      padding: 0;
+      text-align: center;
+
+      .item {
+        margin: 25px 0;
+        overflow: hidden;
+
+        a {
+          text-decoration: none;
+          color: black;
+          font-family: "Lato", sans-serif;
+          font-size: 2.5rem;
+          font-weight: 300;
+          display: block;
+          transition: color 0.3s ease;
+
+          span {
+            display: block;
+          }
+
+          &:hover {
+            color: #ccc;
+          }
+        }
+      }
+    }
+  }
+
 
   .contact-hero {
     position: relative;
@@ -1766,7 +2470,8 @@ body.contact-page {
 
       h1 {
         font-family: "Playfair Display", serif;
-        font-size: 4.5rem;
+        font-size: clamp(4.5rem, 4.5rem + 0vw, 4.5rem);
+        ;
         letter-spacing: 0.15em;
         text-transform: uppercase;
         color: #ffffff;
@@ -1842,7 +2547,7 @@ body.contact-page {
         border-bottom: 1px solid #e0e0e0;
         padding: 10px 0;
         font-family: "Lato", sans-serif;
-        font-size: 1rem;
+        font-size: clamp(1rem, 1rem + 0vw, 1rem);
         color: #111;
         border-radius: 0;
         outline: none;
@@ -1853,7 +2558,7 @@ body.contact-page {
           font-weight: 300;
           text-transform: uppercase;
           letter-spacing: 0.15em;
-          font-size: 0.8rem;
+          font-size: clamp(0.8rem, 0.8rem + 0vw, 0.8rem);
         }
 
         &:focus {
@@ -1877,7 +2582,8 @@ body.contact-page {
           }
 
           span {
-            font-size: 0.75rem;
+            font-size: clamp(0.75rem, 0.75rem + 0vw, 0.75rem);
+            ;
             text-transform: uppercase;
             letter-spacing: 0.1em;
             color: #777;
@@ -1892,7 +2598,8 @@ body.contact-page {
         border: 1px solid #111;
         color: #111;
         font-family: "Lato", sans-serif;
-        font-size: 0.9rem;
+        font-size: clamp(0.9rem, 0.9rem + 0vw, 0.9rem);
+        ;
         letter-spacing: 0.25em;
         text-transform: uppercase;
         cursor: pointer;
@@ -1911,7 +2618,8 @@ body.contact-page {
 
       h2 {
         font-family: "Playfair Display", serif;
-        font-size: 2rem;
+        font-size: clamp(2rem, 2rem + 0vw, 2rem);
+        ;
         letter-spacing: 0.05em;
         text-transform: uppercase;
         text-align: center;
@@ -1929,7 +2637,7 @@ body.contact-page {
 
         .calendar-month {
           font-family: "Lato", sans-serif;
-          font-size: 1rem;
+          font-size: clamp(1rem, 1rem + 0vw, 1rem);
           letter-spacing: 0.2em;
           text-transform: uppercase;
           font-weight: 700;
@@ -1938,7 +2646,7 @@ body.contact-page {
         .calendar-arrow {
           border: none;
           background: transparent;
-          font-size: 1.5rem;
+          font-size: clamp(1.5rem, 1.5rem + 0vw, 1.5rem);
           cursor: pointer;
           color: #555;
 
@@ -1955,7 +2663,8 @@ body.contact-page {
         text-align: center;
 
         th {
-          font-size: 0.75rem;
+          font-size: clamp(0.75rem, 0.75rem + 0vw, 0.75rem);
+          ;
           font-weight: 700;
           color: #999;
           padding-bottom: 1rem;
@@ -1965,7 +2674,8 @@ body.contact-page {
           padding: 5px;
           height: 50px;
           width: 50px;
-          font-size: 0.9rem;
+          font-size: clamp(0.9rem, 0.9rem + 0vw, 0.9rem);
+          ;
           color: black;
           border: none;
 
@@ -1973,7 +2683,6 @@ body.contact-page {
             background-color: black;
             cursor: pointer;
             color: white;
-            border-radius: 50%;
           }
         }
       }
@@ -1987,7 +2696,8 @@ body.contact-page {
 
     h2 {
       font-family: "Playfair Display", serif;
-      font-size: 2.5rem;
+      font-size: clamp(2.5rem, 2.5rem + 0vw, 2.5rem);
+      ;
       letter-spacing: 0.1em;
       text-transform: uppercase;
       font-weight: 400;
@@ -1996,14 +2706,14 @@ body.contact-page {
 
     .contact-details-line {
       font-family: "Lato", sans-serif;
-      font-size: 1.1rem;
+      font-size: clamp(1.1rem, 1.1rem + 0vw, 1.1rem);
       color: #555;
       margin-bottom: 0.8rem;
       font-weight: 300;
     }
 
     p:last-child {
-      font-size: 0.85rem;
+      font-size: clamp(0.8rem, 0.8rem + 0vw, 0.8rem);
       color: #999;
       margin-top: 2rem;
       max-width: 600px;
@@ -2041,7 +2751,8 @@ body.contact-page {
       .pe-subtitle {
         display: block;
         font-family: "Lato", sans-serif;
-        font-size: 0.75rem;
+        font-size: clamp(0.75rem, 0.75rem + 0vw, 0.75rem);
+        ;
         letter-spacing: 0.25em;
         color: #d4a373;
         margin-bottom: 1.5rem;
@@ -2051,7 +2762,8 @@ body.contact-page {
 
       h2 {
         font-family: "Playfair Display", serif;
-        font-size: 3.5rem;
+        font-size: clamp(3.5rem, 3.5rem + 0vw, 3.5rem);
+        ;
         line-height: 1;
         color: #111;
         margin-bottom: 2.5rem;
@@ -2060,7 +2772,7 @@ body.contact-page {
 
       .pe-description {
         font-family: "Lato", sans-serif;
-        font-size: 1.05rem;
+        font-size: clamp(1rem, 1rem + 0vw, 1rem);
         line-height: 1.9;
         color: #555;
         margin-bottom: 3.5rem;
@@ -2077,7 +2789,8 @@ body.contact-page {
 
         .label {
           font-family: "Lato", sans-serif;
-          font-size: 0.7rem;
+          font-size: clamp(0.7rem, 0.7rem + 0vw, 0.7rem);
+          ;
           text-transform: uppercase;
           letter-spacing: 0.2em;
           color: #999;
@@ -2086,7 +2799,8 @@ body.contact-page {
         .number,
         .email {
           font-family: "Playfair Display", serif;
-          font-size: 1.3rem;
+          font-size: clamp(1.3rem, 1.3rem + 0vw, 1.3rem);
+          ;
           color: #111;
           font-style: italic;
         }
@@ -2116,7 +2830,7 @@ body.contact-page {
         border-bottom: 1px solid #e0e0e0;
         padding: 15px 0;
         font-family: "Lato", sans-serif;
-        font-size: 1.1rem;
+        font-size: clamp(1.1rem, 1.1rem + 0vw, 1.1rem);
         color: #111;
         outline: none;
         transition: all 0.4s ease;
@@ -2127,7 +2841,7 @@ body.contact-page {
           font-weight: 300;
           text-transform: uppercase;
           letter-spacing: 0.15em;
-          font-size: 0.8rem;
+          font-size: clamp(0.8rem, 0.8rem + 0vw, 0.8rem);
         }
 
         &:focus {
@@ -2148,7 +2862,8 @@ body.contact-page {
         border: 1px solid #111;
         color: #111;
         font-family: "Lato", sans-serif;
-        font-size: 0.85rem;
+        font-size: clamp(0.85rem, 0.85rem + 0vw, 0.85rem);
+        ;
         letter-spacing: 0.25em;
         text-transform: uppercase;
         cursor: pointer;
@@ -2211,7 +2926,8 @@ body.contact-page {
         background: #ffffff;
 
         .philosophy-header h2 {
-          font-size: 2.5rem;
+          font-size: clamp(2.5rem, 2.5rem + 0vw, 2.5rem);
+          ;
         }
       }
     }
@@ -2280,6 +2996,7 @@ body.contact-page {
 
 @media (max-width: 1024px) {
   body.index-page {
+
     .partners {
       padding: 2.5rem 1.5rem 3rem;
     }
@@ -2338,8 +3055,12 @@ body.contact-page {
 @media (max-width: 960px) {
   body.index-page {
 
+
+
     .hero {
       background: none;
+      margin-top: 10rem;
+
 
       width: 100%;
       margin-left: 0;
@@ -2361,7 +3082,8 @@ body.contact-page {
         align-items: center;
 
         h1 {
-          font-size: 2.5rem;
+          font-size: clamp(2.5rem, 2.5rem + 0vw, 2.5rem);
+          ;
         }
 
         p {
@@ -2393,7 +3115,8 @@ body.contact-page {
     }
 
     .private-events-heading h2 {
-      font-size: 1.9rem;
+      font-size: clamp(2rem, 2rem + 0vw, 2rem);
+      ;
       letter-spacing: 0.18em;
     }
 
@@ -2418,7 +3141,6 @@ body.contact-page {
 
     .chefs-list .chef-profile {
       flex-direction: column !important;
-      /* Fuerza columna en todos */
       text-align: center !important;
       gap: 2rem;
 
@@ -2434,7 +3156,6 @@ body.contact-page {
 
     .front-team .front-team-content {
       grid-template-columns: 1fr;
-      /* 1 Columna en móvil */
     }
 
     .team-collab .team-collab-text {
@@ -2555,7 +3276,37 @@ body.contact-page {
   }
 }
 
-@media (max-width: 600px) {
+@media (max-width: 750px) {
+  body.index-page {
+    nav {
+      padding: 1.5rem 6%;
+
+      nav .nav-links {
+        display: none;
+      }
+
+      nav .navcollapse {
+        display: block;
+      }
+    }
+
+    .menu_mobile {
+      display: flex;
+    }
+
+    .history-text-card {
+      flex-direction: column;
+      width: 90%;
+      margin-top: -40px;
+      padding: 30px;
+    }
+
+    .history-divider {
+      width: 50px;
+      height: 1px;
+    }
+  }
+
   .team-page {
     nav {
       padding: 1.2rem 6%;
@@ -2567,6 +3318,22 @@ body.contact-page {
         flex-wrap: wrap;
         gap: 1rem 1.5rem;
       }
+
+      nav {
+        padding: 1.5rem 6%;
+
+        nav .nav-links {
+          display: none;
+        }
+
+        nav .navcollapse {
+          display: block;
+        }
+      }
+
+      .menu_mobile {
+        display: flex;
+      }
     }
 
     .team-hero {
@@ -2574,7 +3341,8 @@ body.contact-page {
       padding-bottom: 2rem;
 
       h1 {
-        font-size: 2.1rem;
+        font-size: clamp(2rem, 2rem + 0vw, 2rem);
+
         letter-spacing: 0.14em;
       }
     }
@@ -2583,28 +3351,53 @@ body.contact-page {
       padding: 3rem 6% 2.5rem;
 
       h2 {
-        font-size: 2rem;
+        font-size: clamp(2rem, 2rem + 0vw, 2rem);
         letter-spacing: 0.12em;
       }
 
       .chefs-intro-text {
         padding-left: 1.2rem;
         border-left-width: 2px;
-        font-size: 0.95rem;
+        font-size: clamp(1rem, 1rem + 0vw, 1rem);
+      }
+      img{
+        width: 300px;
+        height: auto;
       }
     }
 
     .chefs-list {
       padding: 3rem 6% 3.5rem;
+      display: flex;
+      flex-direction: column;
 
-      .chef-profile img {
-        width: 220px;
-        height: 220px;
+      gap: 3rem;/ .chef-profile {
+
+        margin-bottom: 2rem;
+
+        img {
+          width: 220px;
+          height: 220px;
+          margin-bottom: 1.5rem;
+          object-fit: cover;
+        }
       }
     }
 
     .front-team {
       padding: 2.5rem 6% 3rem;
+
+      display: flex;
+      flex-direction: column;
+      gap: 3rem;
+
+      img {
+        margin-bottom: 1.5rem;
+      }
+
+      .front-card {
+        margin-bottom: 2rem;
+      }
     }
 
     .team-collab {
@@ -2620,6 +3413,42 @@ body.contact-page {
     }
   }
 
+  body.menu-page {
+    nav {
+      padding: 1.5rem 6%;
+
+      nav .nav-links {
+        display: none;
+      }
+
+      nav .navcollapse {
+        display: block;
+      }
+    }
+
+    .menu_mobile {
+      display: flex;
+    }
+  }
+
+  body.contact-page {
+    nav {
+      padding: 1.5rem 6%;
+
+      nav .nav-links {
+        display: none;
+      }
+
+      nav .navcollapse {
+        display: block;
+      }
+    }
+
+    .menu_mobile {
+      display: flex;
+    }
+  }
+
   .footer {
     .footer-top-section {
       flex-direction: column;
@@ -2629,7 +3458,8 @@ body.contact-page {
     }
 
     .footer-brand h1 {
-      font-size: 3.5rem;
+      font-size: clamp(3.5rem, 3.5rem + 0vw, 3.5rem);
+      ;
       text-align: left;
     }
 
@@ -2653,5 +3483,18 @@ body.contact-page {
       text-align: left;
       gap: 0.8rem;
     }
+  }
+}
+
+
+@media (min-width: 601px) {
+  nav {
+    .navcollapse {
+      display: none;
+    }
+  }
+
+  .menu_mobile {
+    display: none;
   }
 }
