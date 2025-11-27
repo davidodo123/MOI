@@ -6,8 +6,9 @@
   box-sizing: border-box;
 }
 
-body {
+html, body {
   overflow-x: hidden;
+  scroll-behavior: smooth;
 }
 
 body.index-page {
