@@ -6,7 +6,8 @@
   box-sizing: border-box;
 }
 
-html, body {
+html,
+body {
   overflow-x: hidden;
   scroll-behavior: smooth;
 }
@@ -803,7 +804,6 @@ body.index-page {
       line-height: 0.7;
       color: white;
       text-align: right;
-      word-break: break-word;
     }
   }
 
@@ -1193,7 +1193,8 @@ body.team-page {
     h2 {
       text-align: center;
       font-family: "Playfair Display", serif;
-font-size: clamp(2.5rem, 2.203rem + 1.081vw, 3.5rem);      ;
+      font-size: clamp(2.5rem, 2.203rem + 1.081vw, 3.5rem);
+      ;
       letter-spacing: 0.05em;
       text-transform: uppercase;
       font-weight: 400;
@@ -1277,7 +1278,7 @@ font-size: clamp(2.5rem, 2.203rem + 1.081vw, 3.5rem);      ;
     padding: 6rem 8%;
 
     .chefs-list-inner {
-      max-width: 1100px;
+      max-width: 900px;
       margin: 0 auto;
     }
 
@@ -1379,70 +1380,74 @@ font-size: clamp(2.5rem, 2.203rem + 1.081vw, 3.5rem);      ;
   }
 
   .front-team {
-    background: #ffffff;
-    padding: 6rem 8%;
+  background: #ffffff;
+  padding: 6rem 8%;
 
-    .front-team-content {
-      max-width: 1300px;
-      margin: 0 auto;
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 3rem;
+  .front-team-content {
+    max-width: 1300px;
+    margin: 0 auto;
 
+    display: flex;         
+    flex-wrap: wrap;      
+    gap: 3rem;
+    justify-content: center;
+  }
 
-      .front-card {
-        text-align: center;
-        transition: transform 0.3s ease;
+  .front-card {
+    text-align: center;
+    transition: transform 0.3s ease;
 
-        &:hover {
-          transform: translateY(-10px);
-        }
+    flex: 1 1 30%;
+    max-width: 360px;
 
-        img {
-          width: 100%;
-          height: 400px;
-          object-fit: cover;
-          display: block;
-          margin-bottom: 1.5rem;
-        }
+    &:hover {
+      transform: translateY(-10px);
+    }
 
-        h3 {
-          font-family: "Playfair Display", serif;
-          font-size: clamp(1.5rem, 1.5rem + 0vw, 1.5rem);
-          color: #111111;
-          margin-bottom: 0.5rem;
-        }
+    img {
+      width: 100%;
+      height: 400px;
+      object-fit: cover;
+      display: block;
+      margin-bottom: 1.5rem;
+    }
 
-        .front-card-role {
-          font-family: "Lato", sans-serif;
-          font-size: clamp(0.8rem, 0.8rem + 0vw, 0.8rem);
-          text-transform: uppercase;
-          letter-spacing: 0.15em;
-          color: #888888;
-          margin-bottom: 1rem;
-        }
+    h3 {
+      font-family: "Playfair Display", serif;
+      font-size: clamp(1.5rem, 1.5rem + 0vw, 1.5rem);
+      color: #111111;
+      margin-bottom: 0.5rem;
+    }
 
-        .front-card-social {
-          display: flex;
-          justify-content: center;
-          gap: 15px;
-          opacity: 0.6;
-          transition: opacity 0.3s;
+    .front-card-role {
+      font-family: "Lato", sans-serif;
+      font-size: clamp(0.8rem, 0.8rem + 0vw, 0.8rem);
+      text-transform: uppercase;
+      letter-spacing: 0.15em;
+      color: #888888;
+      margin-bottom: 1rem;
+    }
 
-          &:hover {
-            opacity: 1;
-          }
+    .front-card-social {
+      display: flex;
+      justify-content: center;
+      gap: 15px;
+      opacity: 0.6;
+      transition: opacity 0.3s;
 
-          img {
-            width: 30px;
-            height: 30px;
-            margin: 0;
-            object-fit: contain;
-          }
-        }
+      &:hover {
+        opacity: 1;
+      }
+
+      img {
+        width: 30px;
+        height: 30px;
+        margin: 0;
+        object-fit: contain;
       }
     }
   }
+}
 
   .team-collab {
     background: #ffffff;
@@ -1496,7 +1501,7 @@ font-size: clamp(2.5rem, 2.203rem + 1.081vw, 3.5rem);      ;
       gap: 5rem;
 
       img {
-        width: 45%;
+        width: 60%;
         height: auto;
         display: block;
       }
@@ -2295,7 +2300,7 @@ body.contact-page {
           position: absolute;
           width: 50%;
           height: 4px;
-          background: black;
+          background: white;
           transition: .2s ease-in-out;
 
           &:nth-child(odd) {
@@ -3126,7 +3131,7 @@ body.contact-page {
     }
   }
 
-  .team-page {
+  body.team-page {
     .chefs-intro .chefs-intro-content {
       flex-direction: column;
 
@@ -3135,14 +3140,12 @@ body.contact-page {
         height: auto;
       }
 
-      .chefs-intro-text {
-        padding-top: 1rem;
-      }
+      
     }
 
     .chefs-list .chef-profile {
       flex-direction: column !important;
-      text-align: center !important;
+      text-align: center ;
       gap: 2rem;
 
       img {
@@ -3154,10 +3157,19 @@ body.contact-page {
         justify-content: center !important;
       }
     }
+    .front-team {
+    padding: 3rem 6% 3rem;
 
-    .front-team .front-team-content {
-      grid-template-columns: 1fr;
+    .front-team-content {
+      flex-direction: column;
+      align-items: center;
     }
+
+    .front-card {
+      flex: 1 1 100%;
+      max-width: 400px; 
+    }
+  }
 
     .team-collab .team-collab-text {
       flex-direction: column;
@@ -3282,11 +3294,11 @@ body.contact-page {
     nav {
       padding: 1.5rem 6%;
 
-      nav .nav-links {
+      .nav-links {
         display: none;
       }
 
-      nav .navcollapse {
+      .navcollapse {
         display: block;
       }
     }
@@ -3308,187 +3320,192 @@ body.contact-page {
     }
   }
 
-  .team-page {
+  body.team-page {
     nav {
-      padding: 1.2rem 6%;
-      flex-direction: column;
-      align-items: flex-start;
-      gap: 1rem;
+      padding: 1.5rem 6%;
 
       .nav-links {
-        flex-wrap: wrap;
-        gap: 1rem 1.5rem;
+        display: none;
       }
 
-      nav {
-        padding: 1.5rem 6%;
-
-        nav .nav-links {
-          display: none;
-        }
-
-        nav .navcollapse {
-          display: block;
-        }
-      }
-
-      .menu_mobile {
-        display: flex;
+      .navcollapse {
+        display: block;
+        margin-left: auto;
       }
     }
 
-    .team-hero {
-      padding-top: 6.5rem;
-      padding-bottom: 2rem;
-
-      h1 {
-        font-size: clamp(2rem, 2rem + 0vw, 2rem);
-
-        letter-spacing: 0.14em;
-      }
+    .menu_mobile {
+      display: flex;
     }
+  }
 
-    .chefs-intro {
+  .team-hero {
+    padding-top: 6.5rem;
+    padding-bottom: 2rem;
+
+    h1 {
+      font-size: clamp(2rem, 2rem + 0vw, 1rem);
+
+      letter-spacing: 0.14em;
+    }
+  }
+
+  .chefs-intro {
       padding: 3rem 6% 2.5rem;
 
       h2 {
-        font-size: clamp(2rem, 2rem + 0vw, 2rem);
+        font-size: clamp(2rem, 2rem + 0vw, 1rem);
         letter-spacing: 0.12em;
       }
 
+      .chefs-intro-content {
+        flex-direction: column;
+        align-items: center;
+      }
+
+      .chefs-intro-content img {
+        width: 100%;
+        max-width: 100%;
+        height: auto;               
+        object-fit: cover;
+        object-position: center top; 
+        box-shadow: 0 10px 20px rgba(0,0,0,0.08);
+      }
+
       .chefs-intro-text {
-        padding-left: 1.2rem;
-        border-left-width: 2px;
-        font-size: clamp(1rem, 1rem + 0vw, 1rem);
-      }
-      img{
-        width: 300px;
-        height: auto;
+        padding-left: 0;
+        border-left: none;
+        border-top: 1px solid #d4a373;
+        padding-top: 2rem;
+        font-size: clamp(1rem, 1rem + 0vw, 0.5rem);
       }
     }
+  
 
-    .chefs-list {
-      padding: 3rem 6% 3.5rem;
-      display: flex;
-      flex-direction: column;
+  .chefs-list {
+    padding: 3rem 6% 3.5rem;
+    display: flex;
+    flex-direction: column;
 
-      gap: 3rem;/ .chef-profile {
+    gap: 3rem;
 
-        margin-bottom: 2rem;
+    .chef-profile {
 
-        img {
-          width: 220px;
-          height: 220px;
-          margin-bottom: 1.5rem;
-          object-fit: cover;
-        }
-      }
-    }
-
-    .front-team {
-      padding: 2.5rem 6% 3rem;
-
-      display: flex;
-      flex-direction: column;
-      gap: 3rem;
+      margin-bottom: 2rem;
 
       img {
+        width: 1800px;
+        height: 180px;
         margin-bottom: 1.5rem;
-      }
-
-      .front-card {
-        margin-bottom: 2rem;
-      }
-    }
-
-    .team-collab {
-      padding: 3rem 6% 3.5rem;
-    }
-
-    .team-story {
-      padding: 3rem 6% 3rem;
-
-      .team-story-logo {
-        margin-top: 3rem;
+        object-fit: cover;
       }
     }
   }
 
-  body.menu-page {
-    nav {
-      padding: 1.5rem 6%;
+  .front-team {
+    padding: 2.5rem 6% 3rem;
 
-      nav .nav-links {
-        display: none;
-      }
+    display: flex;
+    flex-direction: column;
+    gap: 3rem;
 
-      nav .navcollapse {
-        display: block;
-      }
+    img {
+      margin-bottom: 1.5rem;
     }
 
-    .menu_mobile {
-      display: flex;
+    .front-card {
+      margin-bottom: 2rem;
     }
   }
 
-  body.contact-page {
-    nav {
-      padding: 1.5rem 6%;
-
-      nav .nav-links {
-        display: none;
-      }
-
-      nav .navcollapse {
-        display: block;
-      }
-    }
-
-    .menu_mobile {
-      display: flex;
-    }
+  .team-collab {
+    padding: 3rem 6% 3.5rem;
   }
 
-  .footer {
-    .footer-top-section {
-      flex-direction: column;
-      align-items: flex-start;
-      text-align: left;
-      gap: 2rem;
-    }
+  .team-story {
+    padding: 3rem 6% 3rem;
 
-    .footer-brand h1 {
-      font-size: clamp(3.5rem, 3.5rem + 0vw, 3.5rem);
-      ;
-      text-align: left;
-    }
-
-    .footer-down-section {
-      flex-direction: column;
-
-      .footer-block {
-        width: 100%;
-        border-right: none;
-        border-bottom: 1px solid #333;
-
-        &:last-child {
-          border-bottom: none;
-        }
-      }
-    }
-
-    .footer-bar {
-      flex-direction: column;
-      align-items: flex-start;
-      text-align: left;
-      gap: 0.8rem;
+    .team-story-logo {
+      margin-top: 3rem;
     }
   }
 }
 
+body.menu-page {
+  nav {
+    padding: 1.5rem 6%;
 
-@media (min-width: 601px) {
+    nav .nav-links {
+      display: none;
+    }
+
+    nav .navcollapse {
+      display: block;
+    }
+  }
+
+  .menu_mobile {
+    display: flex;
+  }
+}
+
+body.contact-page {
+  nav {
+    padding: 1.5rem 6%;
+
+    nav .nav-links {
+      display: none;
+    }
+
+    nav .navcollapse {
+      display: block;
+    }
+  }
+
+  .menu_mobile {
+    display: flex;
+  }
+}
+
+.footer {
+  .footer-top-section {
+    flex-direction: column;
+    align-items: flex-start;
+    text-align: left;
+    gap: 2rem;
+  }
+
+  .footer-brand h1 {
+    font-size: clamp(3.5rem, 3.5rem + 0vw, 3.5rem);
+    ;
+    text-align: left;
+  }
+
+  .footer-down-section {
+    flex-direction: column;
+
+    .footer-block {
+      width: 100%;
+      border-right: none;
+      border-bottom: 1px solid #333;
+
+      &:last-child {
+        border-bottom: none;
+      }
+    }
+  }
+
+  .footer-bar {
+    flex-direction: column;
+    align-items: flex-start;
+    text-align: left;
+    gap: 0.8rem;
+  }
+}
+
+
+
+@media (min-width: 751px) {
   nav {
     .navcollapse {
       display: none;

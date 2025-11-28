@@ -1,11 +1,14 @@
-document.addEventListener("DOMContentLoaded", function () {
-  const navIcon = document.getElementById("nav-icon");
-  const mobileMenu = document.querySelector(".menu_mobile");
+  document.addEventListener("DOMContentLoaded", () => {
+    const navIcon = document.getElementById("nav-icon");
+    const mobileMenu = document.querySelector(".menu_mobile");
 
-  if (!navIcon || !mobileMenu) return;
+    if (!navIcon || !mobileMenu) return;
 
-  navIcon.addEventListener("click", () => {
-    navIcon.classList.toggle("open");       // anima la hamburguesa
-    mobileMenu.classList.toggle("menu-open"); // muestra / oculta overlay
+    navIcon.addEventListener("click", () => {
+      navIcon.classList.toggle("open");
+      mobileMenu.classList.toggle("menu-open");
+      document.body.style.overflow = mobileMenu.classList.contains("menu-open")
+        ? "hidden"
+        : "";
+    });
   });
-});
