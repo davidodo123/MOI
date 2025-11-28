@@ -62,12 +62,12 @@ body.index-page {
           bottom: -4px;
           width: 0;
           height: 2px;
-          background: white;
+          background: black;
           transition: width 0.25s ease;
         }
 
         &:hover {
-          color: white;
+          color: black;
         }
 
         &:hover::after {
@@ -972,12 +972,12 @@ body.team-page {
           bottom: -4px;
           width: 0;
           height: 2px;
-          background: white;
+          background: black;
           transition: width 0.25s ease;
         }
 
         &:hover {
-          color: white;
+          color: black;
         }
 
         &:hover::after {
@@ -1585,12 +1585,12 @@ body.menu-page {
           bottom: -4px;
           width: 0;
           height: 2px;
-          background: white;
+          background: black;
           transition: width 0.25s ease;
         }
 
         &:hover {
-          color: white;
+          color: black;
         }
 
         &:hover::after {
@@ -2295,7 +2295,7 @@ body.contact-page {
           position: absolute;
           width: 50%;
           height: 4px;
-          background: white;
+          background: black;
           transition: .2s ease-in-out;
 
           &:nth-child(odd) {
