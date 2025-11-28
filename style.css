@@ -3429,7 +3429,7 @@ body.contact-page {
       margin-top: 3rem;
     }
   }
-}
+
 
 body.menu-page {
   nav {
@@ -3470,9 +3470,10 @@ body.contact-page {
 .footer {
   .footer-top-section {
     flex-direction: column;
-    align-items: flex-start;
+    align-items: center;
     text-align: left;
     gap: 2rem;
+
   }
 
   .footer-brand h1 {
@@ -3504,7 +3505,7 @@ body.contact-page {
 }
 
 
-
+}
 @media (min-width: 751px) {
   nav {
     .navcollapse {
