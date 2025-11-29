@@ -3124,6 +3124,10 @@ body.contact-page {
     .philosophy {
       padding: 0;
 
+      img{
+        margin-top: 3rem;
+      }
+
       .philosophy-card {
         padding: 4rem 2rem;
       }
