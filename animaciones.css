@@ -1,0 +1,219 @@
+/* ===================== INDEX ===================== */
+body.index-page {
+  nav {
+    .nav-links a::after {
+      transition: width 0.25s ease;
+      
+    }
+    .navcollapse {
+      #nav-icon {
+        span {
+          transition: .2s ease-in-out;
+
+        }
+      }
+    }
+  }
+
+  .menu_mobile {
+    transition: all 0.4s ease-in-out;
+
+    .menu_mobile_nav {
+      .item {
+        a {
+          transition: color 0.3s ease;
+
+
+        }
+      }
+    }
+  }
+
+  .hero {
+    .hero-content {
+
+      animation: fadeInLeft 1s ease-out;
+
+      .cta-button {
+        transition: all 0.3s ease;
+
+      }
+    }
+  }
+}
+
+
+/* ===================== FOOTER ===================== */
+
+.footer {
+  .footer-top-section {
+    .footer-box {
+
+      a {
+        transition: color 0.3s;
+
+      }
+    }
+  }
+
+  .footer-down-section {
+    .footer-block {
+      p, a, li {
+        transition: color 0.3s;
+      }
+    }
+
+    .footer-social {
+      img {
+        transition: opacity 0.3s ease, transform 0.3s ease;
+      }
+    }
+  }
+}
+
+
+/* ===================== TEAM ===================== */
+
+body.team-page {
+  nav {
+    .nav-links a::after {
+      transition: width 0.25s ease;
+
+    }
+
+    .navcollapse {
+      #nav-icon span {
+        transition: .2s ease-in-out;
+
+      }
+    }
+  }
+
+  .menu_mobile {
+    transition: all 0.4s ease-in-out;
+
+    .menu_mobile_nav {
+      .item a {
+        transition: color 0.3s ease;
+
+      }
+    }
+  }
+
+  .chefs-list {
+    .chef-profile {
+      img {
+        transition: filter 0.3s ease;
+      }
+
+      .chef-social a {
+        transition: all 0.3s;
+      }
+    }
+  }
+
+  .front-team {
+    .front-card {
+      transition: transform 0.3s ease;
+
+      .front-card-social {
+        transition: opacity 0.3s;
+
+      }
+    }
+  }
+}
+
+
+/* ===================== MENU ===================== */
+
+body.menu-page {
+  nav {
+    .nav-links a::after {
+      transition: width 0.25s ease;
+    }
+
+    .navcollapse #nav-icon span {
+      transition: .2s ease-in-out;
+
+    }
+  }
+
+  .menu_mobile {
+    transition: all 0.4s ease-in-out;
+
+    .menu_mobile_nav {
+      .item a {
+        transition: color 0.3s ease;
+
+      }
+    }
+  }
+
+  .experience {
+    .experience-content {
+      img {
+        transition: filter 0.3s ease;
+
+      }
+
+      .experience-overlay {
+        transition: opacity 0.3s ease;
+
+      }
+    }
+  }
+}
+
+
+/* ===================== CONTACT ===================== */
+
+body.contact-page {
+  nav {
+    .nav-links a::after {
+      transition: width 0.25s ease;
+    }
+
+    .navcollapse #nav-icon span {
+      transition: .2s ease-in-out;
+    }
+  }
+
+  .menu_mobile {
+    transition: all 0.4s ease-in-out;
+
+
+    .menu_mobile_nav {
+      .item a {
+        transition: color 0.3s ease;
+
+      }
+    }
+  }
+
+  .contact-main {
+    .contact-form {
+      .field input {
+        transition: all 0.3s ease;
+      }
+
+      .contact-submit {
+        transition: all 0.3s ease;
+      }
+    }
+  }
+
+  .private-events-section {
+    .private-form-wrapper {
+      input, textarea {
+        transition: all 0.4s ease;
+
+      }
+
+      .private-submit {
+        transition: all 0.4s ease;
+        
+      }
+    }
+  }
+}
