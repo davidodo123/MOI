@@ -42,12 +42,16 @@ body.index-page {
       gap: 3rem;
       list-style: none;
 
+      @media (max-width: 768px) {
+        display: none;
+      }
+
       a {
         font-family: "Lato", sans-serif;
         position: relative;
         text-decoration: none;
         color: black;
-        font-size: clamp(1.5rem, 1.5rem + 0vw, 1.5rem);
+        font-size: 1.5rem;
         letter-spacing: 1px;
         font-weight: 500;
 
@@ -238,7 +242,7 @@ body.index-page {
       font-family: "Lato";
 
       h1 {
-        font-size: clamp(3.5rem, 3.5rem + 0vw, 3.5rem);
+        font-size: 3.5rem;
         line-height: 1.2;
         color: #2c2c2c;
         margin-bottom: 0.5rem;
@@ -246,7 +250,7 @@ body.index-page {
       }
 
       p {
-        font-size: clamp(1.1rem, 1.1rem + 0vw, 1.1rem);
+        font-size: 1.1rem;
         color: #5a5a5a;
         margin-bottom: 2rem;
       }
@@ -259,7 +263,7 @@ body.index-page {
         text-decoration: none;
         text-transform: uppercase;
         letter-spacing: 2px;
-        font-size: clamp(0.85rem, 0.85rem + 0vw, 0.85rem);
+        font-size: 0.85rem;
         border: 2px solid #2c2c2c;
 
         &:hover {
@@ -319,7 +323,7 @@ body.index-page {
   .history-text-content {
     flex: 1;
     text-align: left;
-    font-size: clamp(1rem, 1rem + 0vw, 1rem);
+    font-size: 1rem;
     line-height: 1.6;
     color: #333;
   }
@@ -376,7 +380,7 @@ body.index-page {
         .subtitle {
           display: block;
           font-family: "Lato", sans-serif;
-          font-size: clamp(0.8rem, 0.8rem + 0vw, 0.8rem);
+          font-size: 0.8rem;
           letter-spacing: 0.25em;
           text-transform: uppercase;
           color: #d4a373;
@@ -386,7 +390,7 @@ body.index-page {
 
         h2 {
           font-family: "Playfair Display", serif;
-          font-size: clamp(3.5rem, 3.5rem + 0vw, 3.5rem);
+          font-size: 3.5rem;
           font-weight: 400;
           color: #111;
           line-height: 1.1;
@@ -397,7 +401,7 @@ body.index-page {
       .philosophy-body {
         p {
           font-family: "Lato", sans-serif;
-          font-size: clamp(1rem, 1rem + 0vw, 1rem);
+          font-size: 1rem;
           line-height: 1.8;
           color: #555;
           margin-bottom: 0;
@@ -488,7 +492,7 @@ body.index-page {
         }
 
         p {
-          font-size: clamp(0.85rem, 0.85rem + 0vw, 0.85rem);
+          font-size: 0.85rem;
           line-height: 1.4;
           color: #2c2c2c;
         }
@@ -520,7 +524,7 @@ body.index-page {
 
       h2 {
         font-family: "Bodoni Moda", serif;
-        font-size: clamp(2.4rem, 2.4rem + 0vw, 2.4rem);
+        font-size: 2.4rem;
         letter-spacing: 0.22em;
         text-transform: uppercase;
         font-weight: 500;
@@ -529,7 +533,7 @@ body.index-page {
       .reviews-subtitle {
         margin-top: 1rem;
         font-family: "Lato", sans-serif;
-        font-size: clamp(0.9rem, 0.9rem + 0vw, 0.9rem);
+        font-size: 0.9rem;
         letter-spacing: 0.08em;
         text-transform: uppercase;
         color: #7b746d;
@@ -558,7 +562,7 @@ body.index-page {
           top: 0.9rem;
           left: 1.1rem;
           font-family: "Lato";
-          font-size: clamp(2.5rem, 2.5rem + 0vw, 2.5rem);
+          font-size: 2.5rem;
           line-height: 1;
           color: #d0c2b6;
           pointer-events: none;
@@ -566,7 +570,7 @@ body.index-page {
 
         .review-text {
           font-family: "Lato";
-          font-size: clamp(1rem, 1rem + 0vw, 1rem);
+          font-size: 1rem;
           line-height: 1.9;
           color: #2c2c2c;
           margin: 0 0 1.4rem;
@@ -574,7 +578,7 @@ body.index-page {
 
         .review-rating {
           margin-bottom: 0.8rem;
-          font-size: clamp(0.9rem, 0.9rem + 0vw, 0.9rem);
+          font-size: 0.9rem;
           letter-spacing: 0.18em;
           color: #111111;
         }
@@ -583,7 +587,7 @@ body.index-page {
           .review-name {
             display: block;
             font-family: "Lato";
-            font-size: clamp(0.85rem, 0.85rem + 0vw, 0.85rem);
+            font-size: 0.85rem;
             letter-spacing: 0.2em;
             text-transform: uppercase;
           }
@@ -592,7 +596,7 @@ body.index-page {
             display: block;
             margin-top: 0.15rem;
             font-family: "Lato";
-            font-size: clamp(0.8rem, 0.8rem + 0vw, 0.8rem);
+            font-size: 0.8rem;
             color: #817a73;
           }
         }
@@ -625,7 +629,7 @@ body.index-page {
 
       h2 {
         font-family: "Lato";
-        font-size: clamp(2.2rem, 2.2rem + 0vw, 2.2rem);
+        font-size: 2.2rem;
         letter-spacing: 0.22em;
         text-transform: uppercase;
         font-weight: 500;
@@ -635,7 +639,7 @@ body.index-page {
       .private-events-kicker {
         margin-top: 1rem;
         font-family: "Lato";
-        font-size: clamp(0.85rem, 0.85rem + 0vw, 0.85rem);
+        font-size: 0.85rem;
         letter-spacing: 0.16em;
         text-transform: uppercase;
         color: #7b746d;
@@ -655,7 +659,7 @@ body.index-page {
       flex: 1 1 320px;
       max-width: 520px;
       font-family: "Playfair Display", serif;
-      font-size: clamp(1rem, 1rem + 0vw, 1rem);
+      font-size: 1rem;
       line-height: 1.9;
       border-left: 3px solid #000;
       padding-left: 2.5rem;
@@ -672,7 +676,7 @@ body.index-page {
 
       .private-events-label {
         font-family: "Lato";
-        font-size: clamp(1rem, 1rem + 0vw, 1rem);
+        font-size: 1rem;
         letter-spacing: 0.18em;
         text-transform: uppercase;
         margin-bottom: 1.4rem;
@@ -714,7 +718,7 @@ body.index-page {
 
       .footer-label {
         display: block;
-        font-size: clamp(0.8rem, 0.8rem + 0vw, 0.8rem);
+        font-size: 0.8rem;
         text-transform: uppercase;
         letter-spacing: 0.25em;
         color: #888;
@@ -772,7 +776,7 @@ body.index-page {
       }
 
       h3 {
-        font-size: clamp(0.75rem, 0.75rem + 0vw, 0.75rem);
+        font-size: 0.75rem;
         text-transform: uppercase;
         letter-spacing: 0.2em;
         color: #666;
@@ -782,7 +786,7 @@ body.index-page {
       p,
       a,
       li {
-        font-size: clamp(1rem, 1rem + 0vw, 1rem);
+        font-size: 1rem;
         color: #ccc;
         text-decoration: none;
         line-height: 1.6;
@@ -833,7 +837,7 @@ body.index-page {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    font-size: clamp(0.75rem, 0.75rem + 0vw, 0.75rem);
+    font-size: 0.75rem;
     color: #555;
     text-transform: uppercase;
     letter-spacing: 0.1em;
@@ -890,12 +894,16 @@ body.team-page {
       gap: 3rem;
       list-style: none;
 
+      @media (max-width: 768px) {
+        display: none;
+      }
+
       a {
         font-family: "Lato", sans-serif;
         position: relative;
         text-decoration: none;
         color: black;
-        font-size: clamp(1.5rem, 1.5rem + 0vw, 1.5rem);
+        font-size: 1.5rem;
         letter-spacing: 1px;
         font-weight: 500;
 
@@ -1077,7 +1085,7 @@ body.team-page {
     padding-bottom: 3rem;
 
     h1 {
-      font-size: clamp(4rem, 4rem + 0vw, 4rem);
+      font-size: 4rem;
       letter-spacing: 0.25em;
       text-transform: uppercase;
       font-weight: 400;
@@ -1127,7 +1135,7 @@ body.team-page {
       .chefs-intro-text {
         flex: 1;
         font-family: "Lato", sans-serif;
-        font-size: clamp(1.1rem, 1rem + 0vw, 1rem);
+        font-size: 1.1rem;
         line-height: 1.9;
         color: #2c2c2c;
 
@@ -1145,7 +1153,7 @@ body.team-page {
           margin-top: 2.5rem;
           display: block;
           font-family: "Playfair Display", serif;
-          font-size: clamp(1rem, 1rem + 0vw, 1rem);
+          font-size: 1rem;
           font-style: italic;
           line-height: 1.4;
           color: #111111;
@@ -1217,7 +1225,7 @@ body.team-page {
 
         h3 {
           font-family: "Playfair Display", serif;
-          font-size: clamp(2.2rem, 2.2rem + 0vw, 2.2rem);
+          font-size: 2.2rem;
           color: #111111;
           text-transform: uppercase;
           letter-spacing: 1px;
@@ -1225,7 +1233,7 @@ body.team-page {
 
         h4 {
           font-family: "Lato", sans-serif;
-          font-size: clamp(0.9rem, 0.9rem + 0vw, 0.9rem);
+          font-size: 0.9rem;
           text-transform: uppercase;
           letter-spacing: 0.2em;
           color: #d4a373;
@@ -1235,7 +1243,7 @@ body.team-page {
 
         p {
           font-family: "Lato", sans-serif;
-          font-size: clamp(1rem, 1rem + 0vw, 1rem);
+          font-size: 1rem;
           line-height: 1.8;
           color: #666666;
           margin-bottom: 1.5rem;
@@ -1291,6 +1299,7 @@ body.team-page {
 
     .front-card {
       text-align: center;
+
       flex: 1 1 30%;
       max-width: 360px;
 
@@ -1308,14 +1317,14 @@ body.team-page {
 
       h3 {
         font-family: "Playfair Display", serif;
-        font-size: clamp(1.5rem, 1.5rem + 0vw, 1.5rem);
+        font-size: 1.5rem;
         color: #111111;
         margin-bottom: 0.5rem;
       }
 
       .front-card-role {
         font-family: "Lato", sans-serif;
-        font-size: clamp(0.8rem, 0.8rem + 0vw, 0.8rem);
+        font-size: 0.8rem;
         text-transform: uppercase;
         letter-spacing: 0.15em;
         color: #888888;
@@ -1358,7 +1367,7 @@ body.team-page {
     .team-collab-text {
       max-width: 1500px;
       margin: 3rem auto 0;
-      padding: 0 8rem;
+      padding: 0 8%;
       display: flex;
       gap: 4rem;
       align-items: flex-start;
@@ -1367,7 +1376,7 @@ body.team-page {
     .team-collab-text-col {
       flex: 1;
       font-family: "Lato", sans-serif;
-      font-size: clamp(1rem, 1rem + 0vw, 1rem);
+      font-size: 1rem;
       line-height: 1.8;
       color: #555555;
       text-align: justify;
@@ -1403,7 +1412,7 @@ body.team-page {
     .team-story-text {
       flex: 1;
       font-family: "Lato", sans-serif;
-      font-size: clamp(1.1rem, 1.1rem + 0vw, 1.1rem);
+      font-size: 1.1rem;
       line-height: 1.8;
       color: #2c2c2c;
       font-weight: 300;
@@ -1462,12 +1471,16 @@ body.menu-page {
       gap: 3rem;
       list-style: none;
 
+      @media (max-width: 768px) {
+        display: none;
+      }
+
       a {
         font-family: "Lato", sans-serif;
         position: relative;
         text-decoration: none;
         color: black;
-        font-size: clamp(1.5rem, 1.5rem + 0vw, 1.5rem);
+        font-size: 1.5rem;
         letter-spacing: 1px;
         font-weight: 500;
 
@@ -1720,7 +1733,7 @@ body.menu-page {
         content: "TASTING MENU";
         display: block;
         font-family: "Lato", sans-serif;
-        font-size: clamp(0.7rem, 0.7rem + 0vw, 0.7rem);
+        font-size: 0.7rem;
         letter-spacing: 0.25em;
         color: #d4a373;
         margin-bottom: 1rem;
@@ -1803,6 +1816,15 @@ body.menu-page {
       margin: 0 1rem;
     }
 
+    .tasting-menu-inner {
+      img {
+        width: 30px;
+        height: auto;
+        display: block;
+        margin: 0;
+        opacity: 0.7;
+      }
+    }
   }
 
   .specials {
@@ -1929,7 +1951,7 @@ body.menu-page {
           align-items: baseline;
 
           span {
-            font-size: clamp(1.2rem, 1.2rem + 0vw, 1.2rem);
+            font-size: 1.2rem;
             color: #888;
             font-family: "Lato";
           }
@@ -1975,7 +1997,7 @@ body.menu-page {
 
   .experience {
     width: 100%;
-    padding: 0;
+    padding: 0 0 6rem;
     background: #ffffff;
 
     .experience-inner {
@@ -2027,7 +2049,7 @@ body.menu-page {
         span {
           font-family: "Lato", sans-serif;
           font-weight: 500;
-          font-size: clamp(1rem, 1rem + 0vw, 1rem);
+          font-size: 1rem;
           letter-spacing: 0.2em;
           text-transform: uppercase;
           color: #fff;
@@ -2083,6 +2105,7 @@ body.contact-page {
       list-style: none;
 
       @media (max-width: 768px) {
+        display: none;
       }
 
       a {
@@ -2090,7 +2113,7 @@ body.contact-page {
         position: relative;
         text-decoration: none;
         color: white;
-        font-size: clamp(1.5rem, 1.5rem + 0vw, 1.5rem);
+        font-size: 1.5rem;
         letter-spacing: 1px;
         font-weight: 500;
 
@@ -2289,7 +2312,7 @@ body.contact-page {
 
       h1 {
         font-family: "Playfair Display", serif;
-        font-size: clamp(2.5rem, 4.5rem + 0vw, 4rem);
+        font-size: 4rem;
         letter-spacing: 0.15em;
         text-transform: uppercase;
         color: #ffffff;
@@ -2365,7 +2388,7 @@ body.contact-page {
         border-bottom: 1px solid #e0e0e0;
         padding: 10px 0;
         font-family: "Lato", sans-serif;
-        font-size: clamp(1rem, 1rem + 0vw, 1rem);
+        font-size: 1rem;
         color: #111;
         border-radius: 0;
         outline: none;
@@ -2375,7 +2398,7 @@ body.contact-page {
           font-weight: 300;
           text-transform: uppercase;
           letter-spacing: 0.15em;
-          font-size: clamp(0.8rem, 0.8rem + 0vw, 0.8rem);
+          font-size: 0.8rem;
         }
 
         &:focus {
@@ -2399,7 +2422,7 @@ body.contact-page {
           }
 
           span {
-            font-size: clamp(0.75rem, 0.75rem + 0vw, 0.75rem);
+            font-size: 0.75rem;
             text-transform: uppercase;
             letter-spacing: 0.1em;
             color: #777;
@@ -2414,7 +2437,7 @@ body.contact-page {
         border: 1px solid #111;
         color: #111;
         font-family: "Lato", sans-serif;
-        font-size: clamp(0.9rem, 0.9rem + 0vw, 0.9rem);
+        font-size: 0.9rem;
         letter-spacing: 0.25em;
         text-transform: uppercase;
         cursor: pointer;
@@ -2432,7 +2455,7 @@ body.contact-page {
 
       h2 {
         font-family: "Playfair Display", serif;
-        font-size: clamp(2rem, 2rem + 0vw, 2rem);
+        font-size: 2rem;
         letter-spacing: 0.05em;
         text-transform: uppercase;
         text-align: center;
@@ -2450,7 +2473,7 @@ body.contact-page {
 
         .calendar-month {
           font-family: "Lato", sans-serif;
-          font-size: clamp(1rem, 1rem + 0vw, 1rem);
+          font-size: 1rem;
           letter-spacing: 0.2em;
           text-transform: uppercase;
           font-weight: 700;
@@ -2459,7 +2482,7 @@ body.contact-page {
         .calendar-arrow {
           border: none;
           background: transparent;
-          font-size: clamp(1.5rem, 1.5rem + 0vw, 1.5rem);
+          font-size: 1.5rem;
           cursor: pointer;
           color: #555;
 
@@ -2476,7 +2499,7 @@ body.contact-page {
         text-align: center;
 
         th {
-          font-size: clamp(0.75rem, 0.75rem + 0vw, 0.75rem);
+          font-size: 0.75rem;
           font-weight: 700;
           color: #999;
           padding-bottom: 1rem;
@@ -2486,7 +2509,7 @@ body.contact-page {
           padding: 5px;
           height: 50px;
           width: 50px;
-          font-size: clamp(0.9rem, 0.9rem + 0vw, 0.9rem);
+          font-size: 0.9rem;
           color: black;
           border: none;
 
@@ -2507,7 +2530,7 @@ body.contact-page {
 
     h2 {
       font-family: "Playfair Display", serif;
-      font-size: clamp(2.5rem, 2.5rem + 0vw, 2.5rem);
+      font-size: 2.5rem;
       letter-spacing: 0.1em;
       text-transform: uppercase;
       font-weight: 400;
@@ -2516,14 +2539,14 @@ body.contact-page {
 
     .contact-details-line {
       font-family: "Lato", sans-serif;
-      font-size: clamp(1.1rem, 1.1rem + 0vw, 1.1rem);
+      font-size: 1.1rem;
       color: #555;
       margin-bottom: 0.8rem;
       font-weight: 300;
     }
 
     p:last-child {
-      font-size: clamp(0.8rem, 0.8rem + 0vw, 0.8rem);
+      font-size: 0.8rem;
       color: #999;
       margin-top: 2rem;
       max-width: 600px;
@@ -2561,7 +2584,7 @@ body.contact-page {
       .private-subtitle {
         display: block;
         font-family: "Lato", sans-serif;
-        font-size: clamp(0.75rem, 0.75rem + 0vw, 0.75rem);
+        font-size: 0.75rem;
         letter-spacing: 0.25em;
         color: #d4a373;
         margin-bottom: 1.5rem;
@@ -2571,7 +2594,7 @@ body.contact-page {
 
       h2 {
         font-family: "Playfair Display", serif;
-        font-size: clamp(3.5rem, 3.5rem + 0vw, 3.5rem);
+        font-size: 3.5rem;
         line-height: 1;
         color: #111;
         margin-bottom: 2.5rem;
@@ -2580,7 +2603,7 @@ body.contact-page {
 
       .private-description {
         font-family: "Lato", sans-serif;
-        font-size: clamp(1rem, 1rem + 0vw, 1rem);
+        font-size: 1rem;
         line-height: 1.9;
         color: #555;
         margin-bottom: 3.5rem;
@@ -2597,7 +2620,7 @@ body.contact-page {
 
         .label {
           font-family: "Lato", sans-serif;
-          font-size: clamp(0.7rem, 0.7rem + 0vw, 0.7rem);
+          font-size: 0.7rem;
           text-transform: uppercase;
           letter-spacing: 0.2em;
           color: #999;
@@ -2606,7 +2629,7 @@ body.contact-page {
         .number,
         .email {
           font-family: "Playfair Display", serif;
-          font-size: clamp(1.3rem, 1.3rem + 0vw, 1.3rem);
+          font-size: 1.3rem;
           color: #111;
           font-style: italic;
         }
@@ -2636,7 +2659,7 @@ body.contact-page {
         border-bottom: 1px solid #e0e0e0;
         padding: 15px 0;
         font-family: "Lato", sans-serif;
-        font-size: clamp(1.1rem, 1.1rem + 0vw, 1.1rem);
+        font-size: 1.1rem;
         color: #111;
         outline: none;
         border-radius: 0;
@@ -2646,7 +2669,7 @@ body.contact-page {
           font-weight: 300;
           text-transform: uppercase;
           letter-spacing: 0.15em;
-          font-size: clamp(0.8rem, 0.8rem + 0vw, 0.8rem);
+          font-size: 0.8rem;
         }
 
         &:focus {
@@ -2667,7 +2690,7 @@ body.contact-page {
         border: 1px solid #111;
         color: #111;
         font-family: "Lato", sans-serif;
-        font-size: clamp(0.85rem, 0.85rem + 0vw, 0.85rem);
+        font-size: 0.85rem;
         letter-spacing: 0.25em;
         text-transform: uppercase;
         cursor: pointer;
@@ -2726,7 +2749,7 @@ body.contact-page {
         background: #ffffff;
 
         .philosophy-header h2 {
-          font-size: clamp(2.5rem, 2.5rem + 0vw, 2.5rem);
+          font-size: 2.5rem;
         }
       }
     }
@@ -2871,7 +2894,7 @@ body.contact-page {
         align-items: center;
 
         h1 {
-          font-size: clamp(2.5rem, 2.5rem + 0vw, 2.5rem);
+          font-size: 2.5rem;
         }
 
         p {
@@ -2902,7 +2925,7 @@ body.contact-page {
     }
 
     .private-events-heading h2 {
-      font-size: clamp(2rem, 2rem + 0vw, 2rem);
+      font-size: 2rem;
       letter-spacing: 0.18em;
     }
 
@@ -3067,32 +3090,9 @@ body.contact-page {
   }
 }
 
-/* NUEVO: breakpoint general para el menú a 768px */
-@media (max-width: 768px) {
-  body.index-page nav .nav-links,
-  body.team-page nav .nav-links,
-  body.menu-page nav .nav-links,
-  body.contact-page nav .nav-links {
-    display: none;
-  }
-
-  body.index-page nav .navcollapse,
-  body.team-page nav .navcollapse,
-  body.menu-page nav .navcollapse,
-  body.contact-page nav .navcollapse {
-    display: block;
-  }
-
-  body.index-page .menu_mobile,
-  body.team-page .menu_mobile,
-  body.menu-page .menu_mobile,
-  body.contact-page .menu_mobile {
-    display: flex;
-  }
-}
-
 @media (max-width: 750px) {
   body.index-page {
+
     nav {
       padding: 1.5rem 6rem;
 
@@ -3120,6 +3120,31 @@ body.contact-page {
       width: 50px;
       height: 1px;
     }
+
+    .philosophy {
+      padding: 0;
+
+      .philosophy-card {
+        padding: 4rem 2rem;
+      }
+    }
+
+    .signature-dish {
+      padding: 0;
+    }
+
+    .partners-awards {
+      padding: 0;
+    }
+
+    .reviews {
+      padding: 0;
+    }
+
+    .private-events {
+      padding: 0;
+    }
+
   }
 
   body.team-page {
@@ -3139,23 +3164,23 @@ body.contact-page {
     .menu_mobile {
       display: flex;
     }
-  }
 
-  .team-hero {
-    padding-top: 6.5rem;
-    padding-bottom: 2rem;
 
-    h1 {
-      font-size: clamp(2rem, 2rem + 0vw, 1rem);
-      letter-spacing: 0.14em;
+    .team-hero {
+      padding-top: 6.5rem;
+      padding-bottom: 2rem;
+
+      h1 {
+        font-size: 2rem;
+        letter-spacing: 0.14em;
+      }
     }
-  }
 
-  .chefs-intro {
-    padding: 3rem 6rem 2.5rem;
+    .chefs-intro {
+    padding: 3rem 1.5rem 2.5rem;
 
     h2 {
-      font-size: clamp(2rem, 2rem + 0vw, 1rem);
+      font-size: 2rem;
       letter-spacing: 0.12em;
     }
 
@@ -3174,56 +3199,61 @@ body.contact-page {
     }
 
     .chefs-intro-text {
-      padding-left: 0;
+      padding: 3rem 3rem;
       border-left: none;
       border-top: 1px solid #d4a373;
-      padding-top: 2rem;
-      font-size: clamp(1rem, 1rem + 0vw, 0.5rem);
+      font-size: 1rem;
     }
   }
 
-  .chefs-list {
-    padding: 3rem 6rem 3.5rem;
-    display: flex;
-    flex-direction: column;
-    gap: 3rem;
+    .chefs-list {
+      padding: 3rem 3rem;
+      display: flex;
+      flex-direction: column;
+      gap: 3rem;
 
-    .chef-profile {
-      margin-bottom: 2rem;
+      .chef-profile {
+        margin-bottom: 2rem;
 
-      img {
-        width: 1800px;
-        height: 180px;
-        margin-bottom: 1.5rem;
-        object-fit: cover;
+        img {
+          width: 100%;
+          height: 180px;
+          margin-bottom: 1.5rem;
+          object-fit: cover;
+        }
       }
     }
-  }
 
-  .front-team {
-    padding: 2.5rem 6rem 3rem;
-    display: flex;
-    flex-direction: column;
-    gap: 3rem;
+    .front-team {
+      padding: 3rem 3rem;
 
-    img {
-      margin-bottom: 1.5rem;
+      display: flex;
+      flex-direction: column;
+      gap: 3rem;
+
+      img {
+        margin-bottom: 1.5rem;
+      }
+
+      .front-card {
+        margin-bottom: 2rem;
+      }
     }
 
-    .front-card {
-      margin-bottom: 2rem;
+    .team-collab {
+      padding: 0;
+
+      .team-collab-text{
+        padding: 3rem 3rem;
+      }
     }
-  }
 
-  .team-collab {
-    padding: 3rem 6rem 3.5rem;
-  }
+    .team-story {
+      padding: 3rem 3rem;
 
-  .team-story {
-    padding: 3rem 6rem 3rem;
-
-    .team-story-logo {
-      margin-top: 3rem;
+      .team-story-logo {
+        margin-top: 3rem;
+      }
     }
   }
 
@@ -3243,6 +3273,20 @@ body.contact-page {
     .menu_mobile {
       display: flex;
     }
+    .tasting-menu{
+      padding: 0;
+    }
+    .specials{
+      padding: 3rem 3rem;
+    }
+    .wines{
+      padding: 3rem 3rem;
+    }
+    .experience{
+      h2{
+        padding: 3rem;
+      }
+    }
   }
 
   body.contact-page {
@@ -3261,19 +3305,23 @@ body.contact-page {
     .menu_mobile {
       display: flex;
     }
+
+    .contact-main{
+      padding: 3rem 3rem;
+    }
   }
 
   .footer {
     .footer-top-section {
       flex-direction: column;
       align-items: center;
-      text-align: left;
+      text-align: center;
       gap: 2rem;
     }
 
     .footer-brand h1 {
-      font-size: clamp(3.5rem, 3.5rem + 0vw, 3.5rem);
-      text-align: left;
+      font-size: 3.5rem;
+      text-align: center;
     }
 
     .footer-down-section {
@@ -3293,13 +3341,13 @@ body.contact-page {
     .footer-bar {
       flex-direction: column;
       align-items: flex-start;
-      text-align: left;
+      text-align: center;
       gap: 0.8rem;
     }
   }
 }
 
-@media (min-width: 769px) {
+@media (min-width: 751px) {
   nav {
     .navcollapse {
       display: none;
