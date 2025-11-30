@@ -1148,48 +1148,13 @@ body.team-page {
           margin-top: 1.5rem;
           font-weight: 300;
         }
-
-        .chefs-intro-quote {
-          margin-top: 2.5rem;
-          display: block;
-          font-family: "Playfair Display", serif;
-          font-size: 1rem;
-          font-style: italic;
-          line-height: 1.4;
-          color: #111111;
-          font-weight: 400;
-
-          &::before {
-            content: "“";
-            color: #d4a373;
-            margin-right: 5px;
-          }
-
-          &::after {
-            content: "”";
-            color: #d4a373;
-            margin-left: 5px;
-          }
-        }
-      }
-    }
-
-    .chefs-intro-arrow {
-      margin-top: 4rem;
-      display: flex;
-      justify-content: center;
-      opacity: 0.6;
-
-      img {
-        width: 30px;
-        height: auto;
       }
     }
   }
 
   .chefs-list {
     background: #fbfbfb;
-    padding: 6rem 8rem;
+    padding: 6rem 18rem;
 
     .chefs-list-inner {
       max-width: 900px;
@@ -1285,7 +1250,7 @@ body.team-page {
 
   .front-team {
     background: #ffffff;
-    padding: 6rem 8rem;
+    padding: 6rem 18rem;
 
     .front-team-content {
       max-width: 1300px;
@@ -1353,7 +1318,7 @@ body.team-page {
 
   .team-collab {
     background: #ffffff;
-    padding: 0 0 6rem;
+    padding: 0 22rem 6rem;
 
     img {
       width: 100%;
@@ -1393,7 +1358,7 @@ body.team-page {
   .team-story {
     width: 100%;
     background: #ffffff;
-    padding: 4rem 8rem 6rem;
+    padding: 4rem 22rem 6rem;
 
     .team-story-content {
       max-width: 1200px;
@@ -1997,7 +1962,7 @@ body.menu-page {
 
   .experience {
     width: 100%;
-    padding: 0 0 6rem;
+    padding: 0;
     background: #ffffff;
 
     .experience-inner {
@@ -2628,10 +2593,9 @@ body.contact-page {
 
         .number,
         .email {
-          font-family: "Playfair Display", serif;
+          font-family: "Lato";
           font-size: 1.3rem;
           color: #111;
-          font-style: italic;
         }
       }
     }
@@ -3092,7 +3056,6 @@ body.contact-page {
 
 @media (max-width: 750px) {
   body.index-page {
-
     nav {
       padding: 1.5rem 6rem;
 
@@ -3124,7 +3087,7 @@ body.contact-page {
     .philosophy {
       padding: 0;
 
-      img{
+      img {
         margin-top: 3rem;
       }
 
@@ -3148,11 +3111,10 @@ body.contact-page {
     .private-events {
       padding: 0;
 
-      .private-events-content{
+      .private-events-content {
         padding: 3rem 3rem;
       }
     }
-
   }
 
   body.team-page {
@@ -3173,7 +3135,6 @@ body.contact-page {
       display: flex;
     }
 
-
     .team-hero {
       padding-top: 6.5rem;
       padding-bottom: 2rem;
@@ -3185,34 +3146,34 @@ body.contact-page {
     }
 
     .chefs-intro {
-    padding: 3rem 1.5rem 2.5rem;
+      padding: 3rem 1.5rem 2.5rem;
 
-    h2 {
-      font-size: 2rem;
-      letter-spacing: 0.12em;
-    }
+      h2 {
+        font-size: 2rem;
+        letter-spacing: 0.12em;
+      }
 
-    .chefs-intro-content {
-      flex-direction: column;
-      align-items: center;
-    }
+      .chefs-intro-content {
+        flex-direction: column;
+        align-items: center;
+      }
 
-    .chefs-intro-content img {
-      width: 100%;
-      max-width: 100%;
-      height: auto;
-      object-fit: cover;
-      object-position: center top;
-      box-shadow: 0 10px 20px rgba(0, 0, 0, 0.08);
-    }
+      .chefs-intro-content img {
+        width: 100%;
+        max-width: 100%;
+        height: auto;
+        object-fit: cover;
+        object-position: center top;
+        box-shadow: 0 10px 20px rgba(0, 0, 0, 0.08);
+      }
 
-    .chefs-intro-text {
-      padding: 3rem 3rem;
-      border-left: none;
-      border-top: 1px solid #d4a373;
-      font-size: 1rem;
+      .chefs-intro-text {
+        padding: 3rem 3rem;
+        border-left: none;
+        border-top: 1px solid #d4a373;
+        font-size: 1rem;
+      }
     }
-  }
 
     .chefs-list {
       padding: 3rem 3rem;
@@ -3251,7 +3212,7 @@ body.contact-page {
     .team-collab {
       padding: 0;
 
-      .team-collab-text{
+      .team-collab-text {
         padding: 3rem 3rem;
       }
     }
@@ -3281,17 +3242,17 @@ body.contact-page {
     .menu_mobile {
       display: flex;
     }
-    .tasting-menu{
+    .tasting-menu {
       padding: 0;
     }
-    .specials{
+    .specials {
       padding: 3rem 3rem;
     }
-    .wines{
+    .wines {
       padding: 3rem 3rem;
     }
-    .experience{
-      h2{
+    .experience {
+      h2 {
         padding: 3rem;
       }
     }
@@ -3314,7 +3275,7 @@ body.contact-page {
       display: flex;
     }
 
-    .contact-main{
+    .contact-main {
       padding: 3rem 3rem;
     }
   }
